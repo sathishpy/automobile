@@ -7,7 +7,7 @@ def get_data():
 		{
 			"module_name": "Automobile",
 			"color": "'blue'  ",
-			"icon": "octicon octicon-file-directory",
+			"icon": "octicon octicon-rocket",
 			"type": "module",
 			"label": _("Automobile")
 		}
