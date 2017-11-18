@@ -79,13 +79,26 @@ app_license = "GPLv3"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
+doc_events = {
+    "Purchase Receipt": {
+        "on_update": "automobile.automobile.utils.set_cost_center",
+    },
+    "Purchase Invoice": {
+        "on_update": "automobile.automobile.utils.set_cost_center",
+    },
+    "Sales Invoice": {
+        "on_update": "automobile.automobile.utils.set_cost_center",
+    },
+    "Journal Entry": {
+        "on_update": "automobile.automobile.utils.set_cost_center",
+    },
+
 # 	"*": {
 # 		"on_update": "method",
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
 #	}
-# }
+}
 
 # Scheduled Tasks
 # ---------------
@@ -119,4 +132,4 @@ app_license = "GPLv3"
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "automobile.event.get_events"
 # }
-
+fixtures = ["Custom Field"]
