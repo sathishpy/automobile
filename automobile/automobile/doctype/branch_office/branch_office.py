@@ -6,6 +6,5 @@ from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
 
-class AMVehicle(Document):
-	def autoname(self):
-		self.name = self.vehicle_model + "-" + self.vehicle_no
+class BranchOffice(Document):
+	pass

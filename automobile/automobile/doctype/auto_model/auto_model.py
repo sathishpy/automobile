@@ -6,5 +6,6 @@ from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
 
-class AMServiceJobCard(Document):
-	pass
+class AutoModel(Document):
+	def autoname(self):
+		self.name = "{0}-{1}".format(self.model, self.year)
