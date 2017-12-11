@@ -39,3 +39,7 @@ frappe.ui.form.on('Auto Service Job Card', {
 		})
 	},
 });
+frappe.ui.form.on("Auto Service Job Item", "item", function(frm, cdt, cdn) {
+	msgprint("Item added")
+	frm.add_fetch("item", "standard_rate", "rate")
+});

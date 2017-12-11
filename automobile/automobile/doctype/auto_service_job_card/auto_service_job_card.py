@@ -33,6 +33,7 @@ def make_sales_invoice(jobcard):
 			"item_code": jobitem.item,
 			"qty": jobitem.qty,
 			"stock_qty": jobitem.qty,
+			"rate": jobitem.rate,
 		})
 	si.set_missing_values()
 	si.due_date = si.posting_date
