@@ -24,3 +24,4 @@ def set_cost_center(inv, method):
     if (inv.doctype == "Purchase Invoice"):
         for item in inv.items:
             item.cost_center = frappe.db.get_value("Branch Office", inv.branch, "cost_center")
+    

@@ -21,7 +21,9 @@ frappe.ui.form.on('Auto Service Job Card', {
 			}
 		});
 	},
-
+	service_type: function(frm) {
+		frm.events.invoke_function(frm, "populate_service_items")
+	},
 	vehicle: function(frm) {
 		if (frm.doc.docstatus != 1) {
 			frm.set_value("service_date", frappe.datetime.nowdate())
@@ -31,6 +33,7 @@ frappe.ui.form.on('Auto Service Job Card', {
 		frm.add_fetch("vehicle", "odometer", "odometer")
 		frm.add_fetch("vehicle", "owner", "customer")
 		frm.add_fetch("vehicle", "service_center", "service_center")
+		frm.events.invoke_function(frm, "populate_service_type")
 	},
 	make_sales_invoice: function(frm) {
 		frappe.model.open_mapped_doc({
@@ -40,6 +43,5 @@ frappe.ui.form.on('Auto Service Job Card', {
 	},
 });
 frappe.ui.form.on("Auto Service Job Item", "item", function(frm, cdt, cdn) {
-	msgprint("Item added")
 	frm.add_fetch("item", "standard_rate", "rate")
 });
